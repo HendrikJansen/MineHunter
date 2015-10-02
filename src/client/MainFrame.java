@@ -33,7 +33,7 @@ public class MainFrame extends JFrame implements Runnable {
 
 	public MainFrame() {
 
-		setTitle("Minehunter");
+		
 
 		modi = SpielModi.SETZPHASE;
 
@@ -294,7 +294,8 @@ public class MainFrame extends JFrame implements Runnable {
 	private void anmelden() {		
 			nickname = (String)JOptionPane.showInputDialog(this, "Enter a nickname!", "");
 			try {			
-				intf.anmelden(nickname);				
+				intf.anmelden(nickname);
+				setTitle("Minehunter " + nickname );
 			} catch (NameException e) {
 				JOptionPane.showMessageDialog(this, "Der Name '" + nickname + "' ist bereits vergeben!", "NameException",
 						JOptionPane.WARNING_MESSAGE);
